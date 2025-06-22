@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { projectsData, Project } from './data';
+import { projectsData, Project } from '../data/projects';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
