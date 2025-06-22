@@ -4,7 +4,7 @@ import { SiGmail, SiGithub, SiLinkedin, SiTiktok, SiWhatsapp } from 'react-icons
 
 export default function NavBar() {
   return (
-    <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 animate-slide-up">
+    <div className="fixed bottom-4 inset-x-0 flex justify-center">
         <div className="bg-gray-800/90 backdrop-blur-sm text-white p-4 rounded-full flex items-center space-x-6 shadow-2xl border border-gray-700 animate-glow-nav">
             <a href="mailto:sinebour63@gmail.com" className="text-2xl text-red-500 hover:text-red-400 transition-all duration-300 hover:scale-110 hover:rotate-3 animate-bounce-gentle">
                 <SiGmail />
