@@ -5,7 +5,13 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
   <div className="bg-[#1e233c] rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-    <Image src={project.image} alt={project.title} width={500} height={300} objectFit="cover" className="w-full" />
+    <Image
+      src={project.image}
+      alt={project.title}
+      width={500}
+      height={300}
+      style={{ objectFit: 'cover', width: '100%', height: '300px' }}
+    />
     <div className="p-6">
       <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
       <p className="text-gray-400 mb-4">{project.description}</p>
@@ -25,7 +31,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
             className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
           >
             <FaExternalLinkAlt />
-            <span>Visite</span>
+            <span>Voir le site</span>
           </a>
         )}
         <a

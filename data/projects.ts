@@ -7,6 +7,23 @@ export interface Project {
 }
 
 export const projectsData: Project[] = [
+
+  {
+    title: "Sikasso Sugu",
+    description:
+      "Plateforme e-commerce locale pour la ville de Sikasso (Mali). Mon rôle : Développement complet du site (frontend, backend, base de données) + stratégie de lancement sur TikTok et WhatsApp.",
+    image: "/sikassosugu.png",
+    tags: ["Next.js", "MySQL", "Prisma", "Vercel", "Marketing"],
+    link: "https://sikassosugu.site",
+  },
+  {
+    title: "Numaci",
+    description:
+      "Plateforme numérique pour connecter étudiants, entreprises et opportunités (emplois, stages, bourses). Fonctionnalités clés : Scraping automatisé des annonces, système de pertinence avant publication, diffusion via bot Telegram.",
+    image: "/numaci.png",
+    tags: ["Next.js", "Puppeteer", "SQLite", "Telegram Bot"],
+    link: "https://numaci.com",
+  },
   {
     title: "Portail de Gestion Scolaire",
     description:
@@ -21,13 +38,7 @@ export const projectsData: Project[] = [
     image: "/ADMIN.png",
     tags: ["PHP", "JavaScript", "MySQL", "CSS"],
   },
-  {
-    title: "Tableau de Bord E-commerce",
-    description:
-      "Une interface d'administration pour un site e-commerce, permettant de gérer les produits, les catégories, les commandes et les utilisateurs. Développé avec Next.js, Tailwind CSS, Prisma et MySQL.",
-    image: "/ADMINEC.png",
-    tags: ["Next.js", "Tailwind CSS", "Prisma", "MySQL"],
-  },
+
   {
     title: "CV Virtuel",
     description: "Un CV virtuel interactif créé avec React et Tailwind CSS, présentant mes compétences et mon parcours de manière dynamique.",
@@ -48,4 +59,5 @@ export const projectsData: Project[] = [
     image: "/Travel.png",
     tags: ["React", "Next.js", "Tailwind CSS"],
   },
+
 ];

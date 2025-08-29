@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaFigma } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io5';
-import { SiTailwindcss, SiExpress, SiVsco, SiVercel, SiNextdotjs, SiSass } from 'react-icons/si';
+import { SiTailwindcss, SiExpress, SiVsco, SiVercel, SiNextdotjs, SiSass, SiMysql, SiPostgresql, SiPrisma } from 'react-icons/si';
 
 interface Competence {
   name: string;
@@ -21,6 +21,9 @@ const competencesBackend: Competence[] = [
   { name: 'Node.js', icon: <FaNodeJs className="text-green-500" /> },
   { name: 'Express', icon: <SiExpress /> },
   { name: 'Next.js', icon: <SiNextdotjs /> },
+  { name: 'MySQL', icon: <SiMysql className="text-blue-600" /> },
+  { name: 'PostgreSQL', icon: <SiPostgresql className="text-sky-700" /> },
+  { name: 'Prisma', icon: <SiPrisma className="text-teal-500" /> },
 ];
 
 const outils: Competence[] = [

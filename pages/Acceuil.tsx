@@ -49,7 +49,7 @@ export default function Acceuil() {
                     Salut, je suis Bour sine Fall 👋
                 </h3>
                 <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-outline tracking-tight mb-2">
-                    FULLSTACK
+                    WEB
                 </h2>
                 <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-blue-400 tracking-tight mb-2">
                     DÉVELOPPEUR
