@@ -8,9 +8,10 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
     <Image
       src={project.image}
       alt={project.title}
-      width={500}
-      height={300}
-      style={{ objectFit: 'cover', width: '100%', height: '300px' }}
+      width={1000}
+      height={600}
+      style={{ objectFit: 'cover', width: '100%', height: 'auto' }}
+      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
     />
     <div className="p-6">
       <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
