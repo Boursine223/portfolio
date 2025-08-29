@@ -19,9 +19,9 @@ export const projectsData: Project[] = [
   {
     title: "Numaci",
     description:
-      "Plateforme numérique pour connecter étudiants, entreprises et opportunités (emplois, stages, bourses). Fonctionnalités clés : Scraping automatisé des annonces, système de pertinence avant publication, diffusion via bot Telegram.",
+      "Marque de vêtements ivoirienne : j'ai développé le site de vente avec Next.js et Prisma, base de données MySQL, déploiement sur Vercel, gestion des emails avec Brevo, et utilisation d'ImageKit pour l'optimisation des médias.",
     image: "/numaci.png",
-    tags: ["Next.js", "Puppeteer", "SQLite", "Telegram Bot"],
+    tags: ["Next.js", "Prisma", "MySQL", "Vercel", "Brevo", "ImageKit"],
     link: "https://numaci.com",
   },
   {
