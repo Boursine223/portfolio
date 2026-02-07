@@ -87,6 +87,7 @@ body {
   opacity: 0.18;
   pointer-events: none;
   z-index: 1;
+  will-change: transform;
 }
 .bg-hero::before {
   width: 400px;
@@ -94,6 +95,7 @@ body {
   left: -120px;
   top: -120px;
   background: #2d2d6e;
+  animation: hero-bubble-float-1 14s ease-in-out infinite;
 }
 .bg-hero::after {
   width: 200px;
@@ -101,6 +103,27 @@ body {
   right: 40px;
   bottom: 40px;
   background: #3a3a7e;
+  animation: hero-bubble-float-2 18s ease-in-out infinite;
+}
+
+@keyframes hero-bubble-float-1 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(24px, 18px, 0) scale(1.06);
+  }
+}
+
+@keyframes hero-bubble-float-2 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-18px, -22px, 0) scale(1.08);
+  }
 }
 
 @keyframes float-star {
