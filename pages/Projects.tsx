@@ -1,17 +1,13 @@
 import React from 'react';
-import Image from 'next/image';
 import { projectsData, Project } from '../data/projects';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
   <div className="bg-[#1e233c] rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-    <Image
+    <img
       src={project.image}
       alt={project.title}
-      width={1000}
-      height={600}
       style={{ objectFit: 'cover', width: '100%', height: 'auto' }}
-      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
     />
     <div className="p-6">
       <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>

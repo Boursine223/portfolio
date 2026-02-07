@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { FaUniversity, FaBuilding, FaCertificate } from 'react-icons/fa';
 
 const Education = () => {
@@ -8,11 +7,9 @@ const Education = () => {
       <div className="max-w-6xl w-full flex flex-col lg:flex-row items-center mx-auto">
         {/* Image - Hidden on small screens, visible on large screens */}
         <div className="hidden lg:flex lg:w-1/2 justify-center lg:justify-start mb-8 lg:mb-0">
-          <Image
+          <img
             src="/certificat.png"
             alt="Education Illustration"
-            width={450}
-            height={450}
             style={{ objectFit: 'contain', width: '450px', height: '450px' }}
           />
         </div>

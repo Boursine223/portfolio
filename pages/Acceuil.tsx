@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 
 function Stars() {
     // Génère 30 étoiles à des positions et animations aléatoires
@@ -35,12 +34,10 @@ export default function Acceuil() {
             <div className="mb-8 md:mb-0 relative">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-pulse opacity-75 blur-sm scale-110"></div>
                 <div className="relative animate-float">
-                    <Image
+                    <img
                         className="rounded-full object-cover border-4 border-blue-400 shadow-2xl w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-96 lg:h-96 animate-glow"
                         src="/img.jpg"
                         alt="img"
-                        width={400}
-                        height={400}
                     />
                 </div>
             </div>
@@ -48,10 +45,10 @@ export default function Acceuil() {
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-4 flex items-center gap-2">
                     Salut, je suis Bour sine Fall 👋
                 </h3>
-                <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-outline tracking-tight mb-2">
+                <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-outline tracking-[0.22em] sm:tracking-[0.26em] leading-none mb-2">
                     WEB
                 </h2>
-                <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-blue-400 tracking-tight mb-2">
+                <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-blue-400 tracking-wide sm:tracking-wider leading-none mb-2">
                     DÉVELOPPEUR
                 </h2>
             </div>

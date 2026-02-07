@@ -9,12 +9,12 @@ export interface Project {
 export const projectsData: Project[] = [
 
   {
-    title: "Sikasso Sugu",
+    title: "Mali Sugou",
     description:
-      "Plateforme e-commerce locale pour la ville de Sikasso (Mali). Mon rôle : Développement complet du site (frontend, backend, base de données) + stratégie de lancement sur TikTok et WhatsApp.",
-    image: "/sikassosugu.png",
+      "Plateforme e-commerce locale au Mali. Mon rôle : Développement complet du site (frontend, backend, base de données) + authentification via Google + stratégie de lancement sur TikTok et WhatsApp.",
+    image: "/malisugou.png",
     tags: ["Next.js", "MySQL", "Prisma", "Vercel", "Marketing"],
-    link: "https://sikassosugu.site",
+    link: "https://malisugou.com",
   },
   {
     title: "Numaci",
@@ -30,6 +30,13 @@ export const projectsData: Project[] = [
       "Une application web complète pour une université, développée en PHP, JavaScript, et MySQL. Elle permet aux étudiants et à leurs parents de suivre en temps réel les notes, les absences, les paiements, les emplois du temps, et de recevoir des communications de l'administration.",
     image: "/Etudiants.png",
     tags: ["PHP", "JavaScript", "MySQL", "CSS"],
+  },
+  {
+    title: "TechnoLAB",
+    description:
+      "Portail universitaire permettant aux étudiants de consulter leurs notes, absences, historique de paiements, messages, et documents (et autres informations académiques) depuis un seul espace. Réalisé avec Next.js, Prisma, MySQL et Express.",
+    image: "/technolab.png",
+    tags: ["Next.js", "Prisma", "MySQL", "Express"],
   },
   {
     title: "Tableau de Bord Administrateur",
