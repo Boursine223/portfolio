@@ -39,7 +39,11 @@ const Education = () => {
               </div>
               <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-400">Institut Supérieur de Technologies Appliquées(TechnoLAB-ISTA)</h2>
               <p className="text-gray-400 text-xs md:text-sm mb-1 lg:mb-2">2023 - 2025</p>
-              <p className="text-gray-300 text-sm md:text-base">Licence en Informatique(à venir)</p>
+              <p className="text-gray-300 text-sm md:text-base">
+                DUT en Informatique de Gestion
+                <br />
+                Licence en Génie Logiciel (à venir)
+              </p>
             </div>
             
             {/* Timeline Item 3 */}

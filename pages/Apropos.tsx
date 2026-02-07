@@ -1,7 +1,9 @@
 import React from 'react'
+import { projectsData } from '../data/projects';
 
 export default function Apropos() {
   const [open, setOpen] = React.useState(false);
+  const [printing, setPrinting] = React.useState(false);
 
   React.useEffect(() => {
     if (!open) return;
@@ -11,6 +13,15 @@ export default function Apropos() {
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [open]);
+
+  React.useEffect(() => {
+    if (!printing) return;
+    const id = window.setTimeout(() => {
+      window.print();
+      setPrinting(false);
+    }, 50);
+    return () => window.clearTimeout(id);
+  }, [printing]);
 
   const cv = {
     title: 'CURRICULUM VITAE',
@@ -40,20 +51,6 @@ export default function Apropos() {
           'Automatisation de workflows (n8n, Node-RED, Make)',
           'Notions en réseaux informatiques',
         ],
-      },
-    ],
-    projects: [
-      {
-        title: 'Plateforme e-commerce « Mali Sugou »',
-        items: [
-          'Conception et développement d’un site e-commerce local',
-          'Gestion des produits et catalogue en ligne',
-          'Mise en place d’une stratégie de marketing digital',
-        ],
-      },
-      {
-        title: 'Plateforme de billetterie en ligne',
-        items: ['Vente de billets avec QR code', 'Intégration de systèmes de paiement mobile'],
       },
     ],
     qualities: [
@@ -96,21 +93,29 @@ export default function Apropos() {
             className="w-full max-w-3xl bg-[#0f1226] text-white rounded-2xl border border-white/10 shadow-2xl overflow-hidden"
             onMouseDown={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
+            <div className="flex items-center justify-between gap-3 px-5 py-4 border-b border-white/10">
               <div>
                 <div className="text-xs tracking-[0.35em] text-white/70">{cv.title}</div>
                 <div className="text-lg sm:text-xl font-bold mt-1">Bour Sine Fall</div>
               </div>
-              <button
-                onClick={() => setOpen(false)}
-                className="h-10 w-10 rounded-full bg-white/10 hover:bg-white/15 transition flex items-center justify-center text-xl"
-                aria-label="Fermer"
-              >
-                ×
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setPrinting(true)}
+                  className="bg-blue-500/15 border border-blue-400/30 text-blue-200 px-3 py-2 rounded-lg hover:bg-blue-500/20 transition text-sm font-semibold"
+                >
+                  Télécharger PDF
+                </button>
+                <button
+                  onClick={() => setOpen(false)}
+                  className="h-10 w-10 rounded-full bg-white/10 hover:bg-white/15 transition flex items-center justify-center text-xl"
+                  aria-label="Fermer"
+                >
+                  ×
+                </button>
+              </div>
             </div>
 
-            <div className="max-h-[75vh] overflow-auto px-5 py-5 space-y-6">
+            <div id="cv-print" className="max-h-[75vh] overflow-auto px-5 py-5 space-y-6">
               <section className="space-y-3">
                 <h2 className="text-base sm:text-lg font-bold text-blue-300">Informations personnelles</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -159,14 +164,29 @@ export default function Apropos() {
               <section className="space-y-3">
                 <h2 className="text-base sm:text-lg font-bold text-blue-300">Projets réalisés</h2>
                 <div className="space-y-4">
-                  {cv.projects.map((p) => (
+                  {projectsData.map((p) => (
                     <div key={p.title} className="bg-white/5 border border-white/10 rounded-xl p-4">
-                      <div className="font-semibold mb-2">{p.title}</div>
-                      <ul className="list-disc pl-5 space-y-1 text-white/90">
-                        {p.items.map((it) => (
-                          <li key={it}>{it}</li>
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                        <div className="font-semibold">{p.title}</div>
+                        {p.link && (
+                          <a
+                            href={p.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-blue-300 hover:text-blue-200 underline underline-offset-4"
+                          >
+                            {p.link}
+                          </a>
+                        )}
+                      </div>
+                      <p className="text-white/85 mt-2 leading-relaxed">{p.description}</p>
+                      <div className="flex flex-wrap gap-2 mt-3">
+                        {p.tags.map((tag) => (
+                          <span key={tag} className="bg-white/5 border border-white/10 text-white/80 px-2 py-1 rounded-full text-xs">
+                            {tag}
+                          </span>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -208,6 +228,12 @@ export default function Apropos() {
             </div>
 
             <div className="px-5 py-4 border-t border-white/10 flex justify-end">
+              <button
+                onClick={() => setPrinting(true)}
+                className="bg-blue-500/15 border border-blue-400/30 text-blue-200 px-4 py-2 rounded-lg hover:bg-blue-500/20 transition mr-2"
+              >
+                Télécharger PDF
+              </button>
               <button
                 onClick={() => setOpen(false)}
                 className="bg-white/10 hover:bg-white/15 transition px-4 py-2 rounded-lg"

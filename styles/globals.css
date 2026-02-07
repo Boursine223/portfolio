@@ -25,6 +25,53 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  [role="button"] {
+    cursor: none;
+  }
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: rgba(96, 165, 250, 0.95);
+  box-shadow: 0 0 18px rgba(96, 165, 250, 0.65), 0 0 36px rgba(168, 85, 247, 0.25);
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 9999px;
+  border: 2px solid rgba(96, 165, 250, 0.6);
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.12) 0%, rgba(168, 85, 247, 0.06) 55%, rgba(0, 0, 0, 0) 70%);
+  box-shadow: 0 0 22px rgba(96, 165, 250, 0.22);
+  pointer-events: none;
+  z-index: 9998;
+  will-change: transform, opacity;
+  transition: width 160ms ease, height 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.cursor-ring.cursor-ring--hover {
+  width: 42px;
+  height: 42px;
+  border-color: rgba(168, 85, 247, 0.85);
+  box-shadow: 0 0 26px rgba(168, 85, 247, 0.25), 0 0 56px rgba(96, 165, 250, 0.18);
+}
+
 /* Background hero avec cercles et étoiles */
 .bg-hero {
   background: radial-gradient(ellipse at top left, #23234f 60%, #191932 100%);
@@ -176,4 +223,37 @@ body {
 .animate-bounce-gentle-delay-4 {
   animation: bounce-gentle 2s ease-in-out infinite;
   animation-delay: 0.8s;
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  #cv-print,
+  #cv-print * {
+    visibility: visible !important;
+  }
+
+  #cv-print {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+  }
+
+  #cv-print a {
+    color: #000000 !important;
+    text-decoration: none !important;
+  }
 }
